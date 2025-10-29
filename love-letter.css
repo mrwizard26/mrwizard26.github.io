@@ -1,0 +1,152 @@
+.navigation-wrapper {
+  display: contents;
+}
+ 
+.navigation-container1 {
+  display: contents;
+}
+ 
+.navigation-container2 {
+  display: none;
+}
+ 
+.navigation-container3 {
+  display: contents;
+}
+ 
+.navigation-navigationtoggle-icon1 {
+  top: 50%;
+  left: 50%;
+  color: var(--color-on-surface);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--animation-duration-fast)
+        var(--animation-curve-primary),
+      transform var(--animation-duration-fast) var(--animation-curve-primary);
+}
+ 
+.navigation-navigationtoggle-icon2 {
+  top: 50%;
+  left: 50%;
+  color: var(--color-on-surface);
+  opacity: 0;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--animation-duration-fast)
+        var(--animation-curve-primary),
+      transform var(--animation-duration-fast) var(--animation-curve-primary);
+}
+ 
+.navigation-container4 {
+  display: none;
+}
+ 
+.navigation-container5 {
+  display: contents;
+}
+ 
+.navigation-container6 {
+  display: none;
+}
+ 
+.navigation-container7 {
+  display: contents;
+}
+
+.footer-wrapper {
+  display: contents;
+}
+ 
+.footer-container1 {
+  display: contents;
+}
+ 
+.footer-container2 {
+  display: none;
+}
+ 
+.footer-container3 {
+  display: contents;
+}
+ 
+.footer-container4 {
+  display: none;
+}
+ 
+.footer-container5 {
+  display: contents;
+}
+ 
+.footer-container6 {
+  display: none;
+}
+ 
+.footer-container7 {
+  display: contents;
+}
+
+.love-letter-container1 {
+  width: 100%;
+  display: block;
+  min-height: 100vh;
+}
+ 
+.love-letter-container2 {
+  display: none;
+}
+ 
+.love-letter-container3 {
+  display: contents;
+}
+ 
+.love-letter-text15 {
+  font-weight: 700;
+}
+ 
+.love-letter-container5 {
+  display: none;
+}
+ 
+.love-letter-container6 {
+  display: contents;
+}
+ 
+.love-letter-container7 {
+  display: none;
+}
+ 
+.love-letter-container8 {
+  display: contents;
+}
+ 
+.love-letter-container9 {
+  right: 50px;
+  border: 1px solid #ffffff5c;
+  bottom: 30px;
+  display: flex;
+  z-index: 22;
+  position: fixed;
+  box-shadow: 5px 5px 10px 0px rgba(31, 31, 31, 0.4);
+  min-height: auto;
+  align-items: center;
+  padding-top: 8px;
+  padding-left: 12px;
+  border-radius: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  backdrop-filter: blur(6px);
+  background-color: rgba(41, 41, 41, 0.41);
+}
+ 
+.love-letter-icon70 {
+  width: 24px;
+  margin-right: 4px;
+}
+ 
+.love-letter-text31 {
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
