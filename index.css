@@ -222,4 +222,19 @@
   margin: 0 !important; /* you already had margin reset; keep it here with transform */
 }
 
+/* Love letter card sizing */
+.love-letter-card {
+  width: 50%;
+  max-width: 850px; /* optional cap */
+  margin: 0 auto;
+}
+
+/* Mobile full-width */
+@media (max-width: 768px) {
+  .love-letter-card {
+    width: 100%;
+    max-width: none;
+  }
+}
+
 
