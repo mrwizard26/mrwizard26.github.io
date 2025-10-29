@@ -134,11 +134,6 @@
   html, body { overflow-x: hidden; }
 }
 
-.decor-img-2 {
-  object-fit: contain !important;
-  transform: scale(0.65);
-}
-
 /* Letter width only, nothing fancy */
 .love-letter-card {
   width: 50%;
