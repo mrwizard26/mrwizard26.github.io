@@ -157,21 +157,6 @@
   transform: scale(0.75);
 }
 
-/* Force ALL cards to be identical size */
-.polaroid,
-.polaroid-featured {
-  height: 420px !important;
-  max-height: 420px !important;
-  transform: none !important; /* remove accidental upscaling */
-}
-
-/* Standardize image frame in ALL cards */
-.polaroid-frame {
-  height: 250px !important;
-  max-height: 250px !important;
-  flex-shrink: 0;
-  overflow: hidden;
-}
 
 /* Make all captions consume same remaining space */
 .polaroid-caption {
