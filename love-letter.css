@@ -69,10 +69,6 @@
   display: block;
 }
  
-.love-letter-gallery-grid {
-  display: flex;
-}
- 
 .love-letter-gallery-cta {
   border: 2px dashed rgba(120, 120, 120, 0.4);
 }
@@ -125,20 +121,38 @@
   line-height: 24px;
 }
  
-@media(max-width: 1200px) {
-  .love-letter-gallery-grid {
-    height: 1341px;
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-  }
-}
- 
-@media(max-width: 479px) {
+@media(max-width: 768px) {
   .love-letter-card {
     max-width: 100%;
-  }
-  .love-letter-gallery-grid {
-    display: grid;
+    margin: 0 auto;
   }
 }
+
+.love-letter-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; /* spacing between photos */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media(max-width: 1024px) {
+  .love-letter-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 768px) {
+  .love-letter-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.love-letter-gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
