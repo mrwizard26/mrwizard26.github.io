@@ -162,37 +162,47 @@
   transform: scale(0.75);
 }
 
-/* Make all gallery cards a fixed height */
-.polaroid {
+/* Force ALL cards to be identical size */
+.polaroid,
+.polaroid-featured {
+  height: 420px !important;
+  max-height: 420px !important;
+  transform: none !important; /* remove accidental upscaling */
+}
+
+/* Standardize image frame in ALL cards */
+.polaroid-frame {
+  height: 250px !important;
+  max-height: 250px !important;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Make all captions consume same remaining space */
+.polaroid-caption {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 420px; /* adjust if needed */
+  justify-content: flex-start;
   overflow: hidden;
 }
 
-/* Standardize the image area */
-.polaroid-frame {
-  height: 240px; /* crop/contain consistently */
-  overflow: hidden;
-}
-
-/* Ensure all images fit the frame perfectly */
-.polaroid-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Limit text length visually */
+/* Limit story line count visually */
 .polaroid-story {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* show only 3 lines */
+  -webkit-line-clamp: 3; /* Adjust if needed */
   -webkit-box-orient: vertical;
 }
 
-.polaroid-caption {
-  padding: 12px 0 0;
+/* Ensure grid forms perfectly aligned rows */
+.love-letter-gallery-grid {
+  align-items: stretch !important;
+}
+
+/* Prevent rotate margins from affecting layout */
+.polaroid-rotate-left,
+.polaroid-rotate-right {
+  margin: 0 !important;
 }
 
