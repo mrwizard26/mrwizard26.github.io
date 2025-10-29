@@ -104,12 +104,7 @@
   }
 }
 
-.love-letter-gallery-grid img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 12px;
-}
+
 
 @media(max-width: 768px) {
 
@@ -205,4 +200,26 @@
 .polaroid-rotate-right {
   margin: 0 !important;
 }
+
+/* Make each card a vertical flex column */
+.polaroid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Force images to fill the fixed frame size */
+.polaroid-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Neutralize any rotation that could affect layout */
+.polaroid-rotate-left,
+.polaroid-rotate-right {
+  transform: none !important;
+  margin: 0 !important; /* you already had margin reset; keep it here with transform */
+}
+
 
