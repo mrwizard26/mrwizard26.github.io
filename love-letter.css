@@ -221,4 +221,9 @@
   }
 }
 
+.decor-img-2 {
+  object-fit: contain !important;
+  transform: scale(0.9); /* Adjust: 1 = normal, 0.9 = slightly zoomed out */
+}
+
 
