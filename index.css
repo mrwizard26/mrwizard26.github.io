@@ -43,16 +43,6 @@
   line-height: 24px;
 }
 
-/* ---------- Love letter card sizing ---------- */
-.love-letter-card {
-  position: static;
-  width: min(50%, 850px);
-  margin: 0 auto;
-}
-@media (max-width: 768px) {
-  .love-letter-card { width: 100%; max-width: none; }
-}
-
 
 /* ---------- Gallery grid ---------- */
 .love-letter-gallery-grid {
@@ -148,3 +138,16 @@
   object-fit: contain !important;
   transform: scale(0.75);
 }
+
+/* Letter width only, nothing fancy */
+.love-letter-card {
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .love-letter-card {
+    width: 100%;
+  }
+}
+
