@@ -111,7 +111,7 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
               }
-              .hero-card, .timeline-card, .polaroid, .card--photo, .theme-card, .celebrate-card, .collage-photo {
+              .hero-card, .timeline-card, .card--photo, .theme-card, .celebrate-card, .collage-photo {
                 animation: none;
               }
               .hero-icon, .decor-img, .pompom, .demo-element, .interactive-badge, .card-media-featured, .pompom-accent-large, .celebrate-icon {
@@ -509,28 +509,6 @@
                     timelineObserver.observe(card)
                   })
 
-                  // Polaroid interactions
-                  const polaroids = document.querySelectorAll(".polaroid")
-
-                  polaroids.forEach((polaroid) => {
-                    polaroid.addEventListener("click", () => {
-                      const title = polaroid.querySelector(".polaroid-title").textContent
-                      const story = polaroid.querySelector(".polaroid-story").textContent
-
-                      polaroid.setAttribute("aria-pressed", "true")
-
-                      setTimeout(() => {
-                        polaroid.removeAttribute("aria-pressed")
-                      }, 300)
-                    })
-
-                    polaroid.addEventListener("keydown", (e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault()
-                        polaroid.click()
-                      }
-                    })
-                  })
 
                   // Theme card hover effects
                   const themeCards = document.querySelectorAll(".theme-card")
@@ -557,47 +535,6 @@
                     )
 
                     badgeObserver.observe(badge)
-                  }
-
-                  // Gallery entrance animation stagger
-                  const galleryColumns = document.querySelectorAll(".gallery-column")
-
-                  galleryColumns.forEach((column, colIndex) => {
-                    const polaroidsInColumn = column.querySelectorAll(".polaroid")
-                    polaroidsInColumn.forEach((polaroid, index) => {
-                      polaroid.style.animationDelay = `${colIndex * 0.1 + index * 0.15}s`
-                    })
-                  })
-
-                  // Confetti regeneration
-                  const confettiContainer = document.querySelector(".celebrate-confetti")
-                  if (confettiContainer) {
-                    const confettiObserver = new IntersectionObserver(
-                      (entries) => {
-                        entries.forEach((entry) => {
-                          if (entry.isIntersecting) {
-                            const pieces = confettiContainer.querySelectorAll(".confetti-piece")
-                            pieces.forEach((piece) => {
-                              piece.style.animation = "none"
-                              setTimeout(() => {
-                                piece.style.animation = ""
-                              }, 10)
-                            })
-                          }
-                        })
-                      },
-                      { threshold: 0.3 }
-                    )
-
-                    confettiObserver.observe(confettiContainer)
-                  }
-
-                  // Celebrate CTA pulse on load
-                  const celebrateCTA = document.querySelector(".celebrate-cta")
-                  if (celebrateCTA) {
-                    setTimeout(() => {
-                      celebrateCTA.style.animation = "demo-scale 0.5s ease-in-out 3"
-                    }, 1000)
                   }
                 })()
               });
