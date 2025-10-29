@@ -82,48 +82,72 @@
   .love-letter-gallery-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- Polaroid cards ---------- */
-.polaroid {
-  display: flex;
-  flex-direction: column;
+/* ============ Gallery (simple images + captions) ============ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  align-items: start;               /* consistent row alignment */
 }
 
-/* Make every photo area a perfect, equal square */
-.polaroid-frame {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* true square; height derived from width */
-  overflow: hidden;
+/* Each tile */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  background: #faf7d4;              /* subtle paper tone */
   border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  overflow: hidden;
 }
 
-/* Fill the square consistently */
-.polaroid-frame img {
+/* Square image */
+.gallery-img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
 }
 
-/* Caption behaviors */
-.polaroid-caption {
-  flex-grow: 1;
+/* Caption below the image */
+.gallery-caption {
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  overflow: hidden;
+  gap: 4px;
 }
 
-.polaroid-story {
-  overflow: hidden;
+.gallery-caption .title { font-weight: 700; }
+.gallery-caption .date  { opacity: 0.7; font-size: 0.95rem; }
+
+/* Optional: keep captions uniform height across a row */
+.gallery-caption .story {
   display: -webkit-box;
-  -webkit-line-clamp: 3;           /* adjust if you want more lines */
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;            /* adjust to 2–4 lines as you like */
+  overflow: hidden;
 }
 
-/* Neutralize rotate classes so size/layout stays uniform */
-.polaroid-rotate-left,
-.polaroid-rotate-right {
-  transform: none !important;
-  margin: 0 !important;
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile: horizontal scroll gallery with snap */
+@media (max-width: 768px) {
+  .gallery-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;          /* visible, swipeable cards */
+    overflow-x: auto;
+    gap: 16px;
+    padding: 0 16px 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery-item { scroll-snap-align: start; }
 }
 
 /* ---------- Mobile decor adjustments ---------- */
