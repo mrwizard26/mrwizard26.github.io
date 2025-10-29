@@ -162,4 +162,37 @@
   transform: scale(0.75);
 }
 
+/* Make all gallery cards a fixed height */
+.polaroid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 420px; /* adjust if needed */
+  overflow: hidden;
+}
+
+/* Standardize the image area */
+.polaroid-frame {
+  height: 240px; /* crop/contain consistently */
+  overflow: hidden;
+}
+
+/* Ensure all images fit the frame perfectly */
+.polaroid-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Limit text length visually */
+.polaroid-story {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* show only 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.polaroid-caption {
+  padding: 12px 0 0;
+}
 
