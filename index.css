@@ -136,7 +136,7 @@
 
 .decor-img-2 {
   object-fit: contain !important;
-  transform: scale(0.75);
+  transform: scale(0.65);
 }
 
 /* Letter width only, nothing fancy */
