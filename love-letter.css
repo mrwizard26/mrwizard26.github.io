@@ -1,90 +1,3 @@
-.navigation-wrapper {
-  display: contents;
-}
- 
-.navigation-container1 {
-  display: contents;
-}
- 
-.navigation-container2 {
-  display: none;
-}
- 
-.navigation-container3 {
-  display: contents;
-}
- 
-.navigation-navigationtoggle-icon1 {
-  top: 50%;
-  left: 50%;
-  color: var(--color-on-surface);
-  position: absolute;
-  transform: translate(-50%, -50%);
-  transition: opacity var(--animation-duration-fast)
-        var(--animation-curve-primary),
-      transform var(--animation-duration-fast) var(--animation-curve-primary);
-}
- 
-.navigation-navigationtoggle-icon2 {
-  top: 50%;
-  left: 50%;
-  color: var(--color-on-surface);
-  opacity: 0;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  transition: opacity var(--animation-duration-fast)
-        var(--animation-curve-primary),
-      transform var(--animation-duration-fast) var(--animation-curve-primary);
-}
- 
-.navigation-container4 {
-  display: none;
-}
- 
-.navigation-container5 {
-  display: contents;
-}
- 
-.navigation-container6 {
-  display: none;
-}
- 
-.navigation-container7 {
-  display: contents;
-}
-
-.footer-wrapper {
-  display: contents;
-}
- 
-.footer-container1 {
-  display: contents;
-}
- 
-.footer-container2 {
-  display: none;
-}
- 
-.footer-container3 {
-  display: contents;
-}
- 
-.footer-container4 {
-  display: none;
-}
- 
-.footer-container5 {
-  display: contents;
-}
- 
-.footer-container6 {
-  display: none;
-}
- 
-.footer-container7 {
-  display: contents;
-}
-
 .love-letter-container1 {
   width: 100%;
   display: block;
@@ -99,8 +12,69 @@
   display: contents;
 }
  
-.love-letter-text15 {
-  font-weight: 700;
+.love-letter-card {
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  position: sticky;
+  max-width: 75%;
+}
+ 
+.love-letter-pompom1 {
+  top: -726px;
+  right: -15px;
+}
+ 
+.love-letter-pompom2 {
+  top: -404px;
+  right: 118px;
+}
+ 
+.love-letter-pompom3 {
+  top: -129px;
+  right: 39px;
+}
+ 
+.love-letter-pompom4 {
+  left: 663px;
+  bottom: -59px;
+}
+ 
+.love-letter-pompom5 {
+  top: -823px;
+  left: 96px;
+}
+ 
+.love-letter-pompom6 {
+  top: -533px;
+  left: 17px;
+}
+ 
+.love-letter-pompom7 {
+  top: -483px;
+  left: 562px;
+}
+ 
+.love-letter-pompom8 {
+  top: -260px;
+  left: 117px;
+}
+ 
+.love-letter-pompom9 {
+  top: -42px;
+  left: 65px;
+}
+ 
+.love-letter-photo-gallery {
+  display: block;
+}
+ 
+.love-letter-gallery-grid {
+  display: flex;
+}
+ 
+.love-letter-gallery-cta {
+  border: 2px dashed rgba(120, 120, 120, 0.4);
 }
  
 .love-letter-container5 {
@@ -138,15 +112,33 @@
   background-color: rgba(41, 41, 41, 0.41);
 }
  
-.love-letter-icon70 {
+.love-letter-icon5 {
   width: 24px;
   margin-right: 4px;
 }
  
-.love-letter-text31 {
+.love-letter-text20 {
   color: white;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+}
+ 
+@media(max-width: 1200px) {
+  .love-letter-gallery-grid {
+    height: 1341px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+  }
+}
+ 
+@media(max-width: 479px) {
+  .love-letter-card {
+    max-width: 100%;
+  }
+  .love-letter-gallery-grid {
+    display: grid;
+  }
 }
