@@ -45,22 +45,14 @@
 
 /* ---------- Love letter card sizing ---------- */
 .love-letter-card {
-  left: 0;
-  right: 0;
+  position: static;
+  width: min(50%, 850px);
   margin: 0 auto;
-  width: 50%;
-  max-width: 850px; /* optional cap */
+}
+@media (max-width: 768px) {
+  .love-letter-card { width: 100%; max-width: none; }
 }
 
-/* Mobile full-width + no sticky */
-@media (max-width: 768px) {
-  .love-letter-card {
-    position: static !important;
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
-  }
-}
 
 /* ---------- Gallery grid ---------- */
 .love-letter-gallery-grid {
