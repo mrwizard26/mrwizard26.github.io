@@ -156,3 +156,23 @@
   border-radius: 12px;
 }
 
+/* Mobile layout fixes */
+@media(max-width: 768px) {
+  .love-letter-card {
+    position: static;
+    left: auto;
+    right: auto;
+  }
+
+  .decor-left,
+  .decor-right,
+  .pompom {
+    display: none !important;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+
