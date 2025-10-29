@@ -1,49 +1,24 @@
+/* ---------- Base containers ---------- */
 .love-letter-container1 {
   width: 100%;
   display: block;
   min-height: 100vh;
 }
- 
-.love-letter-container2 {
-  display: none;
-}
- 
-.love-letter-container3 {
-  display: contents;
-}
- 
-.love-letter-card {
-  left: 0px;
-  right: 0px;
-  margin: auto;
-  position: sticky;
-  max-width: 75%;
-}
- 
-.love-letter-photo-gallery {
-  display: block;
-}
- 
+
+.love-letter-container2 { display: none; }
+.love-letter-container3 { display: contents; }
+
+.love-letter-photo-gallery { display: block; }
+
 .love-letter-gallery-cta {
   border: 2px dashed rgba(120, 120, 120, 0.4);
 }
- 
-.love-letter-container5 {
-  display: none;
-}
- 
-.love-letter-container6 {
-  display: contents;
-}
- 
-.love-letter-container7 {
-  display: none;
-}
- 
-.love-letter-container8 {
-  display: contents;
-}
- 
+
+.love-letter-container5 { display: none; }
+.love-letter-container6 { display: contents; }
+.love-letter-container7 { display: none; }
+.love-letter-container8 { display: contents; }
+
 .love-letter-container9 {
   right: 50px;
   border: 1px solid #ffffff5c;
@@ -52,68 +27,107 @@
   z-index: 22;
   position: fixed;
   box-shadow: 5px 5px 10px 0px rgba(31, 31, 31, 0.4);
-  min-height: auto;
   align-items: center;
-  padding-top: 8px;
-  padding-left: 12px;
+  padding: 8px 12px;
   border-radius: 8px;
-  padding-right: 12px;
-  padding-bottom: 8px;
   backdrop-filter: blur(6px);
   background-color: rgba(41, 41, 41, 0.41);
 }
- 
-.love-letter-icon5 {
-  width: 24px;
-  margin-right: 4px;
-}
- 
+
+.love-letter-icon5 { width: 24px; margin-right: 4px; }
+
 .love-letter-text20 {
   color: white;
   font-size: 13px;
-  font-style: normal;
   font-weight: 500;
   line-height: 24px;
 }
- 
-@media(max-width: 768px) {
+
+/* ---------- Love letter card sizing ---------- */
+.love-letter-card {
+  position: sticky;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 50%;
+  max-width: 850px; /* optional cap */
+}
+
+/* Mobile full-width + no sticky */
+@media (max-width: 768px) {
   .love-letter-card {
-    max-width: 100%;
+    position: static !important;
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
   }
 }
 
+/* ---------- Gallery grid ---------- */
 .love-letter-gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px; /* spacing between photos */
+  gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  align-items: stretch;
 }
 
-@media(max-width: 1024px) {
-  .love-letter-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 1024px) {
+  .love-letter-gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media(max-width: 768px) {
-  .love-letter-gallery-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 768px) {
+  .love-letter-gallery-grid { grid-template-columns: 1fr; }
 }
 
-.love-letter-gallery-grid img {
+/* ---------- Polaroid cards ---------- */
+.polaroid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make every photo area a perfect, equal square */
+.polaroid-frame {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  aspect-ratio: 1 / 1; /* true square; height derived from width */
+  overflow: hidden;
   border-radius: 12px;
 }
 
-@media(max-width: 768px) {
+/* Fill the square consistently */
+.polaroid-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  /* Stack the two decor images nicely on mobile */
+/* Caption behaviors */
+.polaroid-caption {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.polaroid-story {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;           /* adjust if you want more lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Neutralize rotate classes so size/layout stays uniform */
+.polaroid-rotate-left,
+.polaroid-rotate-right {
+  transform: none !important;
+  margin: 0 !important;
+}
+
+/* ---------- Mobile decor adjustments ---------- */
+@media (max-width: 768px) {
   .decor-left,
   .decor-right {
     position: static !important;
@@ -123,7 +137,6 @@
     margin: 0 auto;
   }
 
-  /* Style the circular images */
   .decor-img {
     width: 130px;
     height: 130px;
@@ -133,76 +146,14 @@
     display: inline-block;
   }
 
-  /* Order: top image first */
-  .decor-left {
-    order: -1;
-    margin-bottom: 24px;
-  }
-
-  /* Bottom image after the hero card */
-  .decor-right {
-    margin-top: 24px;
-  }
-
-  /* No sticky card on mobile */
-  .love-letter-card {
-    position: static !important;
-    max-width: 100%;
-    margin: 0 auto;
-  }
+  .decor-left { order: -1; margin-bottom: 24px; }
+  .decor-right { margin-top: 24px; }
 
   /* Prevent horizontal scroll gap */
-  html, body {
-    overflow-x: hidden;
-  }
+  html, body { overflow-x: hidden; }
 }
 
 .decor-img-2 {
   object-fit: contain !important;
   transform: scale(0.75);
 }
-
-/* Force ALL cards to be identical size */
-.polaroid,
-.polaroid-featured {
-  height: 420px !important;
-  max-height: 420px !important;
-  transform: none !important; /* remove accidental upscaling */
-}
-
-/* Standardize image frame in ALL cards */
-.polaroid-frame {
-  height: 250px !important;
-  max-height: 250px !important;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-/* Make all captions consume same remaining space */
-.polaroid-caption {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-
-/* Limit story line count visually */
-.polaroid-story {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Adjust if needed */
-  -webkit-box-orient: vertical;
-}
-
-/* Ensure grid forms perfectly aligned rows */
-.love-letter-gallery-grid {
-  align-items: stretch !important;
-}
-
-/* Prevent rotate margins from affecting layout */
-.polaroid-rotate-left,
-.polaroid-rotate-right {
-  margin: 0 !important;
-}
-
