@@ -175,4 +175,50 @@
   }
 }
 
+@media(max-width: 768px) {
+
+  /* Stack the two decor images nicely on mobile */
+  .decor-left,
+  .decor-right {
+    position: static !important;
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* Style the circular images */
+  .decor-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 16px auto;
+    display: inline-block;
+  }
+
+  /* Order: top image first */
+  .decor-left {
+    order: -1;
+    margin-bottom: 24px;
+  }
+
+  /* Bottom image after the hero card */
+  .decor-right {
+    margin-top: 24px;
+  }
+
+  /* No sticky card on mobile */
+  .love-letter-card {
+    position: static !important;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Prevent horizontal scroll gap */
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
 
